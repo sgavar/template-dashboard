@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="content-header">
+    <h2 style="color:#367fa9"><b><i class="fa fa-cubes"></i> ESSIN32 Project Management System</b></h2>
+    <h4>This Project Mangement System has two major parts - Dashboard part and Data Entry part</h4>
+    <hr />
+</section>
+
+<section class="body-content">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box box-solid box-info" style="min-height:300px;">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><b><i class="fa fa-dashboard"></i> Dashboard</b></h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <p>Select tracker from the list</p>
+                    <ul>
+                        <li><a asp-controller="AllDistricts" asp-action="Index">AllDistricts</a></li>
+                        <li><a asp-controller="AllDistricts" asp-action="Submitted">Submitted</a></li>
+                        <li><a asp-controller="AllDistricts" asp-action="ToBeSubmitted">ToBeSubmitted</a></li>
+                        <li><a asp-controller="AllDistricts" asp-action="ByLevelofComplexity">ByLevelofComplexity</a></li>
+                        <li><a asp-controller="AllDistricts" asp-action="ByPriority">ByPriority</a></li>
+                        <li><a asp-controller="AllDistricts" asp-action="ByOrganization">ByOrganization</a></li>
+                        <li><a asp-controller="AllDistricts" asp-action="BySubmissionType">BySubmissionType</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box box-solid box-warning" style="min-height:300px;">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><b><i class="fa fa-keyboard-o"></i> Data Entry</b></h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <p>Select entry forms from the list</p>
+                    <ul>
+                        <li><a asp-controller="DataEntry" asp-action="SubmissionTracker">Submission Tracker</a></li>
+                        <li>
+                            <a asp-controller="DataEntry" asp-action="WestatTracker">
+                                Option Year 1 Tracker
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="DataEntry" asp-action="WestatNTPS">
+                                Westat's NTPS
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="DataEntry" asp-action="WestatSSOCS">
+                                Westat's SSOCS
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="DataEntry" asp-action="ApplicationRequirements">
+                                Application Requirements
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                General District Information
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                Application Deadlines
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                Application Progress Tracker
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

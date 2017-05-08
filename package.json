@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "name": "essin32",
+  "private": true,
+  "devDependencies": {
+    "babel-preset-env": "^1.4.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-uglify": "^2.1.2",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0"
+  }
+}

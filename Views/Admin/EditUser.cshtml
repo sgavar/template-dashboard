@@ -1,0 +1,79 @@
+@model TrackingSystem.Models.AdminViewModels.AdminEditViewModel
+@using TrackingSystem.Controllers
+@using TrackingSystem.Data
+@{
+    Layout = "~/views/shared/_Layout.cshtml";
+    ViewBag.Title = "Edit User";
+}
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+            <div class="row x_title">
+                <div class="col-md-12">
+                    <h3><strong>Edit User</strong></h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
+                <div style="width: 100%;">
+
+                    <form asp-controller="Admin" asp-action="SaveUser" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-md-2 col-sm-2 col-xs-12 control-label">User Name</label>
+                            <div class="col-md-4">
+                                <input asp-for="UserName" class="form-control" readonly="readonly" value="@AdminController.AdmUsrName" />
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="col-sm-2 col-xs-12 col-md-2 control-label"></label>
+                            <div class="col-md-4">
+                                <input asp-for="Email" class="form-control" readonly="readonly" value="@AdminController.AdmUsrEmail" />
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        @{
+                            UserManager<ApplicationUser> userManager = null;
+                            ApplicationDbContext context = new ApplicationDbContext();
+                            AdminController admCtrl = new AdminController(userManager, context);
+                            ViewBag.Roles = admCtrl.GetUserRoles(AdminController.AdmUsrRole);
+                        }
+                        <div class="form-group">
+                            <label class="col-xs-12 col-sm-2  col-md-2 control-label">Group Name</label>
+                            <div class="col-md-4 ">
+                                @Html.DropDownListFor(m => m.GroupName, (IEnumerable<SelectListItem>)ViewBag.Roles, new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-xs-12 col-md-2 control-label">New Password</label>
+                            <div class="col-md-4">
+                                <input asp-for="Password" class="form-control" value="" placeholder="* must be at least 6 characters long"/>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10 col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-default">Save</button>
+                            </div>
+                           
+                        </div>
+                    </form>
+                    <form asp-controller="Admin" asp-action="DeleteUser" method="get" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10 col-md-offset-2 col-md-10">
+                                <input asp-for="GroupName" class="form-control" type="hidden" readonly="readonly" value="@AdminController.AdmUsrRole" />
+                                <input asp-for="UserName" class="form-control" type="hidden" readonly="readonly" value="@AdminController.AdmUsrName" />
+                                <button type="submit" class="btn btn-default">Detele User</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<br />

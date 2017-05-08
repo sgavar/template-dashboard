@@ -1,0 +1,173 @@
+﻿
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 550px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display: inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+
+.btn-bracketed::after {
+    display: inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+
+th {
+    border: 1px solid black;
+    background-color: maroon;
+    color: white;
+    font-size: 14px
+}
+
+td {
+    /*border: 1px solid black;
+        background-color: maroon;
+        color: white;*/
+    font-size: 14px
+}
+
+.table-bordered > thead > tr > th, 
+.table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > th, 
+.table-bordered > thead > tr > td, 
+.table-bordered > tbody > tr > td, 
+.table-bordered > tfoot > tr > td {
+    border: 1px solid #000000;
+}
+
+body{
+    min-width:1200px;
+    overflow-x:auto;
+    font-size:16px;
+}
+
+.table-hover > tbody > tr:hover{
+    background-color:paleturquoise;
+}
+
+table.table-bordered.dataTable {
+    border:1px solid black;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    vertical-align: middle;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td {
+    text-align: center;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left;
+}
+
+.box-body{
+    font-size:16px;
+}
+
+.skin-balck .sidebar a {
+    color: wheat;
+}
+
+.skin-balck .treeview-menu > li > a {
+    color: #ffffff;
+}
+
+.skin-balck .treeview-menu > li > a:hover{
+    color: wheat;
+}
+
+.sidebar-menu .treeview-menu > li > a {
+    font-size: 15px;
+}
+
+.navbar-right {
+    float: right !important;
+    margin-right: 0;
+}
+
+.content-wrapper, .right-side {
+    background-color: #ffffff;
+}
+
+.skin-black .main-header > .logo,
+.skin-black .main-header .navbar > .sidebar-toggle,
+.skin-black .main-header .navbar .nav > li > a {
+    color: #367fa9 !important;
+}
+
+[v-cloak] {
+    display:none;
+}
+
+.form-horizontal .control-label
+{
+    text-align:left;
+}
+
+.fade-enter-active{
+    transition: opacity .5s
+}
+.fade-leave-active {
+    transition: opacity .1s
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0
+}
+
+.detail-table > tbody > tr > th {
+    width:30%;
+    text-align:left;
+    color: black;
+    background-color: white;
+}
+
+.label-pop {
+    font-size: 18px;
+    padding-left: 2px;
+    padding-bottom: 9px;
+}
